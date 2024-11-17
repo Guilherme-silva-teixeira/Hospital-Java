@@ -4,12 +4,16 @@
  */
 package com.mycompany.aplicativo;
 
+import java.util.List;
+import java.util.ArrayList;
+
 /**
  *
- * @author shake
+ * @author Guilherme
  */
 public class PrimeiraPagina extends javax.swing.JFrame {
-
+    List<Paciente> pacientes = new ArrayList<>();
+    
     /**
      * Creates new form PrimeiraPagina
      */
@@ -27,6 +31,7 @@ public class PrimeiraPagina extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -35,12 +40,16 @@ public class PrimeiraPagina extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
 
         jButton4.setText("jButton4");
 
+        jButton5.setText("jButton5");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("HOSPITAL");
 
@@ -50,6 +59,7 @@ public class PrimeiraPagina extends javax.swing.JFrame {
         jLabel3.setText("1- Cadastrar novo paciente");
 
         jButton1.setText("OK");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -59,10 +69,17 @@ public class PrimeiraPagina extends javax.swing.JFrame {
         jLabel4.setText("2- Procurar pacientes: ");
 
         jButton2.setText("OK");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel5.setText("3- Lista de médicos");
 
         jButton3.setText("OK");
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jLabel6.setText("4- Lista de pacientes");
+
+        jButton6.setText("OK");
+        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -72,6 +89,7 @@ public class PrimeiraPagina extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -80,7 +98,8 @@ public class PrimeiraPagina extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(jButton3)
+                    .addComponent(jButton6))
                 .addContainerGap(164, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -101,7 +120,11 @@ public class PrimeiraPagina extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jButton3))
-                .addGap(0, 175, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton6)
+                    .addComponent(jLabel6))
+                .addGap(0, 146, Short.MAX_VALUE))
         );
 
         pack();
@@ -110,6 +133,7 @@ public class PrimeiraPagina extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         CadastroPaciente cadastrarPaciente = new CadastroPaciente();
         cadastrarPaciente.setVisible(true);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -152,10 +176,13 @@ public class PrimeiraPagina extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
 }
