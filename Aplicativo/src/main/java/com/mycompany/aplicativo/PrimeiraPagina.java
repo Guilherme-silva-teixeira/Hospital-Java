@@ -6,13 +6,20 @@ package com.mycompany.aplicativo;
 
 import java.util.List;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Guilherme
  */
 public class PrimeiraPagina extends javax.swing.JFrame {
-    List<Paciente> pacientes = new ArrayList<>();
+    List<Paciente> pacientes = new ArrayList<>();//lista
+    
+
+    @Override
+    public void setTitle(String title) {
+        super.setTitle(title); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
     
     /**
      * Creates new form PrimeiraPagina
@@ -20,6 +27,11 @@ public class PrimeiraPagina extends javax.swing.JFrame {
     public PrimeiraPagina() {
         initComponents();
     }
+
+    public void adicionarPaciente(Paciente paciente) {
+        pacientes.add(paciente);
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -70,6 +82,11 @@ public class PrimeiraPagina extends javax.swing.JFrame {
 
         jButton2.setText("OK");
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("3- Lista de médicos");
 
@@ -80,6 +97,11 @@ public class PrimeiraPagina extends javax.swing.JFrame {
 
         jButton6.setText("OK");
         jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -131,10 +153,47 @@ public class PrimeiraPagina extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        CadastroPaciente cadastrarPaciente = new CadastroPaciente();
-        cadastrarPaciente.setVisible(true);
-        
+ CadastroPaciente cadastrarPaciente = new CadastroPaciente(this);
+    cadastrarPaciente.setVisible(true);   
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        if (pacientes.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Nenhum paciente cadastrado.");
+        } else {
+            StringBuilder lista = new StringBuilder("Pacientes cadastrados:\n");
+            for (Paciente p : pacientes) {
+                lista.append(p.toString()).append("\n\n");
+            }
+            JOptionPane.showMessageDialog(this, lista.toString());
+    }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+        String cpf = JOptionPane.showInputDialog(this, "Digite o CPF do paciente:");
+        if (cpf == null || cpf.isEmpty()) {
+            return;
+        }
+
+        Paciente encontrado = null;
+        for (Paciente p : pacientes) {
+            if (p.getCpf().equals(cpf)) {
+                encontrado = p;
+                break;
+            }
+        }
+
+        if (encontrado != null) {
+            JOptionPane.showMessageDialog(this, encontrado.toString());
+        } else {
+            JOptionPane.showMessageDialog(this, "Paciente não encontrado!");
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+
+
+    
 
     /**
      * @param args the command line arguments
