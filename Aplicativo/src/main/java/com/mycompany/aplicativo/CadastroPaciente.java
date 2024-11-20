@@ -12,7 +12,6 @@ import javax.swing.JOptionPane;
  */
 public class CadastroPaciente extends javax.swing.JFrame {
 
-    
       private PrimeiraPagina mainPage;
 
     public CadastroPaciente(PrimeiraPagina mainPage) {
@@ -192,22 +191,17 @@ public class CadastroPaciente extends javax.swing.JFrame {
     //botão´para salvar
     
 
-    
-        private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    //utiliza biblioteca awt
+        private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
             String nome = Nome.getText();
             String endereco = Endereco.getText();
             String CPF = pacienteCPF.getText();
             String telefone = pacienteTelefone.getText();
             String dataNasc = pacienteDataNasc.getText();
-    
-            Paciente paciente = new Paciente(nome, endereco, CPF, telefone, dataNasc);
-            primeiraPagina.adicionarPaciente(paciente);
-    
-            JOptionPane.showMessageDialog(this, "Paciente cadastrado com sucesso!");
+        
+            salvarPaciente(nome, endereco, CPF, telefone, dataNasc);
             this.setVisible(false);
-        }  
-    
-    
+        }
     
                                             
     

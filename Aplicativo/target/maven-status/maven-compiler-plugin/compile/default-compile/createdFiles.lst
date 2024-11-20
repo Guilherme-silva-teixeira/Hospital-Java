@@ -1,5 +1,6 @@
 com\mycompany\aplicativo\PrimeiraPagina$4.class
 com\mycompany\aplicativo\CadastroPaciente$4.class
+com\mycompany\aplicativo\PacienteService.class
 com\mycompany\aplicativo\Paciente.class
 com\mycompany\aplicativo\CadastroPaciente$1.class
 com\mycompany\aplicativo\Aplicativo.class
@@ -10,6 +11,7 @@ com\mycompany\aplicativo\CadastroPaciente$6.class
 com\mycompany\aplicativo\CadastroPaciente$8.class
 com\mycompany\aplicativo\PrimeiraPagina$3.class
 com\mycompany\aplicativo\CadastroPaciente$2.class
+com\mycompany\aplicativo\Aplicativo$1.class
 com\mycompany\aplicativo\CadastroPaciente$7.class
 com\mycompany\aplicativo\CadastroPaciente.class
 com\mycompany\aplicativo\Hospital.class

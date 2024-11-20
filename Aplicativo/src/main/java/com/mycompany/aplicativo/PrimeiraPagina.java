@@ -14,7 +14,8 @@ import javax.swing.JOptionPane;
  */
 public class PrimeiraPagina extends javax.swing.JFrame {
     List<Paciente> pacientes = new ArrayList<>();//lista
-    
+    Hospital hospital = new Hospital("Hospital ABC", "Rua X, 123", "contato@hospitalabc.com", "(11) 1234-5678");
+
 
     @Override
     public void setTitle(String title) {
@@ -54,6 +55,8 @@ public class PrimeiraPagina extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
 
         jButton4.setText("jButton4");
 
@@ -103,6 +106,10 @@ public class PrimeiraPagina extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setText("5- Editar dados do hospital");
+
+        jButton7.setText("jButton7");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -111,6 +118,7 @@ public class PrimeiraPagina extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -121,8 +129,9 @@ public class PrimeiraPagina extends javax.swing.JFrame {
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3)
-                    .addComponent(jButton6))
-                .addContainerGap(164, Short.MAX_VALUE))
+                    .addComponent(jButton6)
+                    .addComponent(jButton7))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,7 +155,11 @@ public class PrimeiraPagina extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton6)
                     .addComponent(jLabel6))
-                .addGap(0, 146, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(jButton7))
+                .addGap(0, 117, Short.MAX_VALUE))
         );
 
         pack();
@@ -192,6 +205,7 @@ public class PrimeiraPagina extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
+    PacienteService pacienteService = new PacienteService();
 
     
 
@@ -237,11 +251,13 @@ public class PrimeiraPagina extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     // End of variables declaration//GEN-END:variables
 }
